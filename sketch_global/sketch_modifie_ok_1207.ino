@@ -97,6 +97,10 @@ void right(char a,char b)
 
 long ralentirDevantUnObstacle(char a, char b)
 {
+
+  monServomoteur.write(105);
+  delay(1000);
+
   digitalWrite(declencheur, HIGH);
   delayMicroseconds(10); 
   digitalWrite(declencheur, LOW);
@@ -138,9 +142,9 @@ long ralentirDevantUnObstacle(char a, char b)
           {
           Serial.println("100 cm avant impact");  advance(125,120);
           }
-          else if (distance >= 10)
+          else if (distance >= 20)
             {
-            Serial.println("10 cm avant impact");  advance(105,100);
+            Serial.println("20 cm avant impact");  advance(105,100);
             }
             else
               {
@@ -159,4 +163,3 @@ void loop()
   delay(5);
 
 }
-
